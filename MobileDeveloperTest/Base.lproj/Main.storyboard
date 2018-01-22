@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -70,11 +71,39 @@
                     </refreshControl>
                     <connections>
                         <outlet property="pullToRefresh" destination="wUj-jp-exX" id="SEW-vd-RiW"/>
+                        <segue destination="SoW-jM-8MW" kind="show" id="kbt-ui-lLh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lPj-fz-7tg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8.8000000000000007" y="93.103448275862078"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jQs-6l-6XJ">
+            <objects>
+                <viewController id="SoW-jM-8MW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="foc-C1-uou">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66H-zS-HR3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="66H-zS-HR3" firstAttribute="top" secondItem="fyw-Wx-e7w" secondAttribute="top" id="7u3-4Q-JeU"/>
+                            <constraint firstItem="fyw-Wx-e7w" firstAttribute="bottom" secondItem="66H-zS-HR3" secondAttribute="bottom" id="Bom-9f-2k2"/>
+                            <constraint firstItem="fyw-Wx-e7w" firstAttribute="trailing" secondItem="66H-zS-HR3" secondAttribute="trailing" id="rRW-vw-tjd"/>
+                            <constraint firstItem="66H-zS-HR3" firstAttribute="leading" secondItem="fyw-Wx-e7w" secondAttribute="leading" id="zxU-rE-TaR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fyw-Wx-e7w"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cn-Ga-pOI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="753" y="95"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8j7-Hk-xeu">
@@ -92,7 +121,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfj-6e-6Ig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-654" y="93"/>
+            <point key="canvasLocation" x="-801" y="93"/>
         </scene>
     </scenes>
 </document>

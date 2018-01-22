@@ -12,11 +12,13 @@ class FirstViewController: UITableViewController {
 
 	// MARK: Attributes
 	@IBOutlet weak var pullToRefresh: UIRefreshControl!
-
+	let viewModel = FirstViewModel()
 	// MARK: Life Cycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupView()
+		viewModel.delegate = self
+		viewModel.loadNewArticles()
 	}
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
@@ -33,6 +35,7 @@ class FirstViewController: UITableViewController {
 	
 	// MARK: UIRefreshControl Actions
 	@objc func refreshControlStartRefreshing() {
+		viewModel.loadNewArticles()
 		pullToRefresh.endRefreshing()
 	}
 	
@@ -42,13 +45,30 @@ class FirstViewController: UITableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 10
+		return viewModel.stories.count
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FirstTableViewCell
-		cell.articleTitle.text = "Please refer to the attached wireframe for an understanding of what the finished app should look like."
-		cell.subtitle.text = "Daniel Roble - 20h"
+		let story = viewModel.stories[indexPath.row]
+		cell.articleTitle.text = story.title
+		cell.subtitle.text = story.author + " - " + story.createdAt
 		return cell
+	}
+
+	override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+		return true
+	}
+	
+	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+		if (editingStyle == UITableViewCellEditingStyle.delete) {
+			tableView.deleteRows(at: [indexPath], with: .automatic)
+		}
+	}
+}
+
+extension FirstViewController: FirstViewModelDelegate {
+	func articlesEndLoading() {
+		self.tableView.reloadData()
 	}
 }

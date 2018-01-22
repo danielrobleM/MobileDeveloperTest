@@ -16,6 +16,8 @@
 		216636812015592D005FFD35 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216636802015592D005FFD35 /* FirstViewController.swift */; };
 		2166368320155D3F005FFD35 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2166368220155D3F005FFD35 /* FirstTableViewCell.swift */; };
 		216636852015656E005FFD35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 216636842015656E005FFD35 /* .gitignore */; };
+		2166368720156752005FFD35 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2166368620156752005FFD35 /* FirstViewModel.swift */; };
+		217C154F20156EE8000F2174 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217C154E20156EE8000F2174 /* Story.swift */; };
 		ACF1756D7BD73B784A2BE3D9 /* Pods_MobileDeveloperTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F617FB9B8834D8848A8697 /* Pods_MobileDeveloperTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		216636802015592D005FFD35 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		2166368220155D3F005FFD35 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		216636842015656E005FFD35 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		2166368620156752005FFD35 /* FirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
+		217C154E20156EE8000F2174 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		71F9193BA14DE6382A43B3F4 /* Pods-MobileDeveloperTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDeveloperTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileDeveloperTest/Pods-MobileDeveloperTest.debug.xcconfig"; sourceTree = "<group>"; };
 		B4F617FB9B8834D8848A8697 /* Pods_MobileDeveloperTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileDeveloperTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,7 +118,9 @@
 				2166365B20155829005FFD35 /* LaunchScreen.storyboard */,
 				2166365E20155829005FFD35 /* Info.plist */,
 				216636802015592D005FFD35 /* FirstViewController.swift */,
+				2166368620156752005FFD35 /* FirstViewModel.swift */,
 				2166368220155D3F005FFD35 /* FirstTableViewCell.swift */,
+				217C154E20156EE8000F2174 /* Story.swift */,
 				216636842015656E005FFD35 /* .gitignore */,
 			);
 			path = MobileDeveloperTest;
@@ -329,13 +335,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MobileDeveloperTest/Pods-MobileDeveloperTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -350,8 +360,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2166368320155D3F005FFD35 /* FirstTableViewCell.swift in Sources */,
+				217C154F20156EE8000F2174 /* Story.swift in Sources */,
 				216636812015592D005FFD35 /* FirstViewController.swift in Sources */,
 				2166365320155829005FFD35 /* AppDelegate.swift in Sources */,
+				2166368720156752005FFD35 /* FirstViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
