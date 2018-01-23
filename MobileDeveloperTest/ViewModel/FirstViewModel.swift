@@ -17,9 +17,14 @@ protocol FirstViewModelDelegate: class {
 }
 
 final class FirstViewModel {
+
+	// MARK: Attributes
 	let url = "http://hn.algolia.com/api/v1/search_by_date?query=ios"
 	var stories: [Story] = []
+	var segueIdentifier = "presentStory"
 	weak var delegate: FirstViewModelDelegate?
+
+	
 	func loadNewArticles() {
 		Alamofire.request(url).responseJSON { response in
 			if let error =  response.result.error {

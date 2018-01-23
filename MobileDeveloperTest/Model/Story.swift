@@ -29,26 +29,35 @@ final class Story:Object {
 		}
 		if let title = json["story_title"].string {
 			self.title = title
-		}else {
+		} else {
 			self.title = "No title available"
 		}
 		if let author = json["author"].string {
 			self.author = author
-		}else {
+		} else {
 			self.author = "No author available"
 		}
 		
 		if let createdAt = json["created_at"].string {
-			self.createdAt = createdAt
-		}else {
+			let date = stringToDate(createdAt)
+			let timeAgoSinceNow = date.getTimeAgoSinceNow()
+			self.createdAt = timeAgoSinceNow
+		} else {
 			self.createdAt = "No created_at available"
 		}
 		
 		if let url = json["story_url"].string {
 			self.url = url
-		}else {
+		} else {
 			self.url = "No url available"
 		}
 	}
-}
 
+	func stringToDate(_ str: String) -> Date {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+		let enUSPosixLocale = Locale(identifier: "en_US_POSIX")
+		formatter.locale = enUSPosixLocale
+		return formatter.date(from: str)!
+	}
+}

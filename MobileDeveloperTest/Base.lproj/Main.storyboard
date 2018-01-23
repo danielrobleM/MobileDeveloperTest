@@ -71,17 +71,17 @@
                     </refreshControl>
                     <connections>
                         <outlet property="pullToRefresh" destination="wUj-jp-exX" id="SEW-vd-RiW"/>
-                        <segue destination="SoW-jM-8MW" kind="show" id="kbt-ui-lLh"/>
+                        <segue destination="SoW-jM-8MW" kind="show" identifier="presentStory" id="kbt-ui-lLh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lPj-fz-7tg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8.8000000000000007" y="93.103448275862078"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="jQs-6l-6XJ">
             <objects>
-                <viewController id="SoW-jM-8MW" sceneMemberID="viewController">
+                <viewController id="SoW-jM-8MW" customClass="SecondViewController" customModule="MobileDeveloperTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="foc-C1-uou">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,16 +90,25 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="C0M-xA-hFK">
+                                <rect key="frame" x="177" y="355.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="66H-zS-HR3" firstAttribute="top" secondItem="fyw-Wx-e7w" secondAttribute="top" id="7u3-4Q-JeU"/>
+                            <constraint firstItem="C0M-xA-hFK" firstAttribute="centerX" secondItem="fyw-Wx-e7w" secondAttribute="centerX" id="99x-Ir-u8Y"/>
                             <constraint firstItem="fyw-Wx-e7w" firstAttribute="bottom" secondItem="66H-zS-HR3" secondAttribute="bottom" id="Bom-9f-2k2"/>
                             <constraint firstItem="fyw-Wx-e7w" firstAttribute="trailing" secondItem="66H-zS-HR3" secondAttribute="trailing" id="rRW-vw-tjd"/>
+                            <constraint firstItem="C0M-xA-hFK" firstAttribute="centerY" secondItem="fyw-Wx-e7w" secondAttribute="centerY" id="t0z-Jf-Eom"/>
                             <constraint firstItem="66H-zS-HR3" firstAttribute="leading" secondItem="fyw-Wx-e7w" secondAttribute="leading" id="zxU-rE-TaR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fyw-Wx-e7w"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="C0M-xA-hFK" id="O0s-un-acr"/>
+                        <outlet property="webView" destination="66H-zS-HR3" id="0UV-HG-QTp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cn-Ga-pOI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

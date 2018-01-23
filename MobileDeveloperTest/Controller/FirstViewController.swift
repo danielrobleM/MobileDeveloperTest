@@ -65,6 +65,22 @@ class FirstViewController: UITableViewController {
 			tableView.deleteRows(at: [indexPath], with: .automatic)
 		}
 	}
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		performSegue(withIdentifier: "presentStory", sender: self)
+	}
+
+	// MARK: - Perform Segue
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == viewModel.segueIdentifier {
+			if let indexPath = self.tableView.indexPathForSelectedRow {
+				let nextViewModel = SecondViewModel(story: viewModel.stories[indexPath.row])
+				if let nextViewController: SecondViewController = segue.destination as? SecondViewController {
+					nextViewController.viewModel = nextViewModel
+				}
+			}
+		}
+	}
 }
 
 extension FirstViewController: FirstViewModelDelegate {
