@@ -13,12 +13,13 @@ class FirstViewController: UITableViewController {
 	// MARK: Attributes
 	@IBOutlet weak var pullToRefresh: UIRefreshControl!
 	let viewModel = FirstViewModel()
+
 	// MARK: Life Cycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupView()
+		viewModel.start()
 		viewModel.delegate = self
-		viewModel.loadNewArticles()
 	}
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
@@ -29,13 +30,18 @@ class FirstViewController: UITableViewController {
 		setupRefreshControl()
 	}
 	
+	func setupTableView() {
+		self.tableView.estimatedRowHeight = 100
+		self.tableView.rowHeight = UITableViewAutomaticDimension
+	}
+	
 	func setupRefreshControl() {
 		pullToRefresh.addTarget(self, action: #selector(refreshControlStartRefreshing), for: .valueChanged)
 	}
 	
 	// MARK: UIRefreshControl Actions
 	@objc func refreshControlStartRefreshing() {
-		viewModel.loadNewArticles()
+		viewModel.requestStories()
 		pullToRefresh.endRefreshing()
 	}
 	
@@ -62,6 +68,8 @@ class FirstViewController: UITableViewController {
 	
 	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		if (editingStyle == UITableViewCellEditingStyle.delete) {
+			viewModel.insertDeleteStory(story: viewModel.stories[indexPath.row])
+			viewModel.stories.remove(at: indexPath.row)
 			tableView.deleteRows(at: [indexPath], with: .automatic)
 		}
 	}
@@ -84,7 +92,7 @@ class FirstViewController: UITableViewController {
 }
 
 extension FirstViewController: FirstViewModelDelegate {
-	func articlesEndLoading() {
+	func reloadView() {
 		self.tableView.reloadData()
 	}
 }

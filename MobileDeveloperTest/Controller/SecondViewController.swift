@@ -11,7 +11,6 @@ import UIKit
 class SecondViewController: UIViewController {
 
 	// MARK: Attributes
-	
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	@IBOutlet weak var webView: UIWebView!
 	var viewModel: SecondViewModel?

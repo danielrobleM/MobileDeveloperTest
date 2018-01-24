@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2117A6B4201826BF0032767A /* NetworkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2117A6B3201826BF0032767A /* NetworkingModel.swift */; };
+		2117A6B620182D4D0032767A /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2117A6B520182D4D0032767A /* DatabaseModel.swift */; };
 		2118F8D72016AAC700213A3E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118F8D62016AAC700213A3E /* SecondViewController.swift */; };
 		2118F8D92016AAEC00213A3E /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118F8D82016AAEC00213A3E /* SecondViewModel.swift */; };
 		2118F8DB2016BA9700213A3E /* Date+TimeAgoSinceNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118F8DA2016BA9700213A3E /* Date+TimeAgoSinceNow.swift */; };
+		2118F8E32016C32300213A3E /* DeleteStoryId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118F8E22016C32300213A3E /* DeleteStoryId.swift */; };
 		2166365320155829005FFD35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2166365220155829005FFD35 /* AppDelegate.swift */; };
 		2166365820155829005FFD35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2166365620155829005FFD35 /* Main.storyboard */; };
 		2166365A20155829005FFD35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2166365920155829005FFD35 /* Assets.xcassets */; };
@@ -43,9 +46,12 @@
 
 /* Begin PBXFileReference section */
 		0F5DCE361E2B78A12426B1A3 /* Pods-MobileDeveloperTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDeveloperTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileDeveloperTest/Pods-MobileDeveloperTest.release.xcconfig"; sourceTree = "<group>"; };
+		2117A6B3201826BF0032767A /* NetworkingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingModel.swift; sourceTree = "<group>"; };
+		2117A6B520182D4D0032767A /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
 		2118F8D62016AAC700213A3E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		2118F8D82016AAEC00213A3E /* SecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
 		2118F8DA2016BA9700213A3E /* Date+TimeAgoSinceNow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+TimeAgoSinceNow.swift"; sourceTree = "<group>"; };
+		2118F8E22016C32300213A3E /* DeleteStoryId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStoryId.swift; sourceTree = "<group>"; };
 		2166364F20155829005FFD35 /* MobileDeveloperTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileDeveloperTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2166365220155829005FFD35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2166365720155829005FFD35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +99,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2117A6B2201826890032767A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2117A6B3201826BF0032767A /* NetworkingModel.swift */,
+				2117A6B520182D4D0032767A /* DatabaseModel.swift */,
+			);
+			name = Model;
+			path = ViewModel/Model;
+			sourceTree = "<group>";
+		};
 		2118F8DC2016BAA700213A3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				217C154E20156EE8000F2174 /* Story.swift */,
+				2118F8E22016C32300213A3E /* DeleteStoryId.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +193,7 @@
 				2118F8E12016BB0000213A3E /* Applicaction */,
 				2118F8DC2016BAA700213A3E /* Controller */,
 				2118F8DF2016BAD900213A3E /* ViewModel */,
+				2117A6B2201826890032767A /* Model */,
 				2118F8DD2016BABD00213A3E /* View */,
 				2118F8DE2016BAC600213A3E /* Model */,
 				2118F8E02016BAE800213A3E /* Extension */,
@@ -422,6 +440,9 @@
 				2166368320155D3F005FFD35 /* FirstTableViewCell.swift in Sources */,
 				217C154F20156EE8000F2174 /* Story.swift in Sources */,
 				216636812015592D005FFD35 /* FirstViewController.swift in Sources */,
+				2117A6B620182D4D0032767A /* DatabaseModel.swift in Sources */,
+				2117A6B4201826BF0032767A /* NetworkingModel.swift in Sources */,
+				2118F8E32016C32300213A3E /* DeleteStoryId.swift in Sources */,
 				2166365320155829005FFD35 /* AppDelegate.swift in Sources */,
 				2166368720156752005FFD35 /* FirstViewModel.swift in Sources */,
 			);

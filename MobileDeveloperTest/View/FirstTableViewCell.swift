@@ -10,11 +10,11 @@ import UIKit
 
 class FirstTableViewCell: UITableViewCell {
 
+	// MARK: Attributes
 	@IBOutlet weak var articleTitle: UILabel!
 	@IBOutlet weak var subtitle: UILabel!
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		// Initialization code
 	}
 	
 	override func setSelected(_ selected: Bool, animated: Bool) {

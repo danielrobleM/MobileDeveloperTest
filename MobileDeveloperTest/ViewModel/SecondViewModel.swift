@@ -13,13 +13,12 @@ final class SecondViewModel {
 	// MARK: Attributes
 	let story: Story
 
-	// MARK: - Initializer
+	// MARK: Initializer
 	init(story: Story) {
 		self.story = story
 	}
 
 	func getUrlRequest() -> URLRequest {
-		print("URL : \(story.url)")
 		let url = URL(string: story.url)
 		return URLRequest(url: url!)
 	}
