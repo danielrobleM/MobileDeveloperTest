@@ -30,7 +30,7 @@ final class DatabaseModel {
 		}
 	}
 	
-	func insertDeleteStory(story: Story){
+	func insertDeleteStory(story: Story) {
 		let realm = try! Realm()
 		let delete = DeleteStoryId()
 		delete.id = story.id
@@ -45,7 +45,7 @@ final class DatabaseModel {
 		return Array(stories)
 	}
 
-	func existStory(id: Int) -> Bool{
+	func existStory(id: Int) -> Bool {
 		let realm = try! Realm()
 		if realm.object(ofType: Story.self, forPrimaryKey: id) != nil {
 			return true

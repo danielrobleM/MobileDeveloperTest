@@ -28,6 +28,10 @@ final class FirstViewModel {
 	func start() {
 		networkingModel.delegate = self
 	}
+	
+	func insertDeleteStory(story: Story) {
+		databaseModel.insertDeleteStory(story: story)
+	}
 
 	func requestStories() {
 		networkingModel.requestStories()
